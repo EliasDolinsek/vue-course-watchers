@@ -15,39 +15,17 @@ const person = reactive({
   },
 });
 
-watch(name, () => {
-  if (name.value.length > 30) {
-    alert("Der eingegebene Name ist zu lange.");
-    person.firstName = "Mark";
-  }
-});
+// TODO: 1. Erstelle einen Watcher, welcher einen Alert ausgibt, sobald die Länge von "name" > 30 ist
 
-watch(person, () => {
-  console.log("Person was updated!");
-});
+// TODO: 2. Gib auf der Konsole aus, wenn sich "person" verändert hat
 
-watch(
-  () => person.firstName,
-  (newValue, oldValue) => {
-    console.log(
-      `First name of person was updated from "${oldValue}" to "${newValue}"`
-    );
-  }
-);
+// TODO: 3. Gib auf der Konsole aus, sobald sich "firstName" von "person" verändert hat. Inklusive oldValue und newValue.
 
-watch(
-  () => person.details,
-  () => {
-    console.log("Details changed!");
-  },
-  { deep: true }
-);
+// TODO: 4. Erstelle einen Deep-Watcher für "details" von "person", welcher ausgibt sobald sich dieses Objekt verändert hat
 
-const unwatchYourAgeWatcher = watchEffect(() => {
-  console.log(`Your age is: ${yourAge.value}`);
-});
+// TODO: 5. Erstelle einen watchEffect-Watcher, welcher "yourAge" ausgibt, sobald es sich verändert hat
 
-unwatchYourAgeWatcher();
+// TODO: 6. Stoppe den "yourAge"-Watcher manuell
 </script>
 
 <template>
