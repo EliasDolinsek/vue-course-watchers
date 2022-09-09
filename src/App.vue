@@ -18,7 +18,6 @@ const person = reactive({
 watch(name, () => {
   if (name.value.length > 30) {
     alert("Der eingegebene Name ist zu lange.");
-    person.firstName = "Mark";
   }
 });
 
